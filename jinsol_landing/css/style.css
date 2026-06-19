@@ -1,0 +1,1218 @@
+@charset "UTF-8";
+
+/* ── 전역 공통 레이아웃 설정 (해상도 밀림 현상 방지 핵심) ── */
+#wrap {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow-x: hidden; 
+}
+
+.inner {
+  width: 100%;
+  max-width: 1440px; 
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 40px;
+}
+
+.mo-only {
+  display: none;
+}
+
+ .pc-only {
+    display: block; 
+  }
+
+@media (max-width: 960px) {
+  .mo-only {
+    display: block; 
+  }
+  .pc-only {
+    display: none; 
+  }
+}
+
+:root {
+  --red: #C41E1E;
+  --red-bright: #E8342A;
+  --cream: #FAF6F0;
+  --white: #FFFFFF;
+  --dark-brown: #1C120C;
+  --black: #111111;
+  --mid-brown: #332218;
+  --border: rgba(0,0,0,0.08);
+  --border-light: rgba(255,255,255,0.1);
+  --gold: #C8962A;
+  --bg-form-container: #4A1111;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+  letter-spacing: -0.03em;
+  padding-bottom: 60px;
+}
+section {padding: 100px 0; }
+
+
+/* ── NAV (상단 고정바) ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 15px 0;
+  background: rgba(255,255,255,0.9); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border); 
+}
+.nav-inner {
+  max-width: 1440px; margin: 0 auto; padding: 0 40px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo img { height: 45px; width: auto; object-fit: contain; }
+
+.nav-btn {
+  display: inline-flex; height: 46px; padding: 0 24px;
+  justify-content: center; align-items: center;
+  background: #801816; color: #F1F1F1;
+  font-size: 16px; font-weight: 700; text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-btn:hover { background: var(--red); }
+
+
+/* ── 홍보 섹션 1 ── */
+.promo-hero {
+  width: 100%;
+  background-color: var(--white);
+  padding: 160px 0 90px;
+  background-image: url('../images/img01.png');
+  background-repeat: no-repeat;
+  background-size: clamp(400px, 40vw, 650px) auto; 
+  background-position: right 40px bottom 120px; 
+}
+
+.promo-hero-max {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-left {
+  max-width: 720px; 
+  text-align: left;
+}
+
+.hero-headline {
+  font-family: 'Paperozi';
+  font-style: normal;
+  line-height: 1.25;
+  margin-bottom: 40px;
+  letter-spacing: -0.04em;
+}
+.hero-headline .dark-text {
+  color: #111111; font-weight: 700; font-size: clamp(32px, 4.5vw, 56px);
+}
+.hero-headline .red-text {
+  color: #C41E1E; font-weight: 900; font-size: clamp(43px, 6vw, 76px);
+  display: inline-block; margin-top: 8px;
+}
+
+.hero-sub {
+  color: #333333; font-size: 18px; font-weight: 400; line-height: 1.75;
+}
+.hero-sub strong {
+  display: block; color: #111111; font-size: 24px; font-weight: 700;
+  line-height: 1.4; margin-bottom: 16px;
+}
+
+.hero-btn-container { width: 100%; text-align: center; margin-top: 110px; }
+.btn-main {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #801816; color: #ffffff; padding: 20px 90px;
+  font-size: 24px; font-weight: 700; text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); transition: all 0.25s ease;
+}
+.btn-main:hover { background: #C41E1E; transform: translateY(-2px); }
+
+
+
+
+/* ── 홍보 섹션 2 ── */
+
+.promo-stress { 
+  
+  background-color: #FAF7F2;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.promo-stress .inner {
+  width: 100%;
+  max-width: 1400px; 
+  margin: 0 auto;
+  padding: 0 40px; 
+  box-sizing: border-box;
+}
+
+.stress-container {
+  width: 100%;
+  display: flex !important;     
+  flex-direction: row !important; 
+  align-items: center; 
+  justify-content: space-between;
+  gap: 60px; 
+}
+
+/* 이미지 영역 */
+.stress-left-img { 
+  flex: 1;
+  max-width: 520px; 
+  height: 340px; 
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
+
+.stress-left-img img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.stress-right-text { 
+  flex: 1.2; 
+  text-align: left; 
+}
+
+/* 매번 바뀌는 고춧가루 */
+.stress-headline { 
+  font-family: 'Paperozi';
+  font-size: clamp(24px, 2.5vw, 32px); 
+  font-weight: 700; 
+  line-height: 1.3; 
+  color: #111111; 
+  margin-bottom: 8px; 
+  text-align: left; 
+}
+
+/* 이제 스트레스 받지 마세요.*/
+.stress-headline em { 
+  font-style: normal; 
+  color: #C41E1E;
+  font-size: clamp(36px, 3.8vw, 48px); 
+  font-weight: 900;
+  display: block;
+  margin-top: 8px;
+  text-align: left; 
+}
+
+.stress-sub { 
+  font-size: clamp(15px, 1.5vw, 17px); 
+  color: #333; 
+  line-height: 1.6; 
+  margin-bottom: 24px; 
+  margin-top: 24px; 
+  font-weight: 400;
+  text-align: left; 
+}
+
+.stress-list { 
+  list-style: none; 
+  margin-bottom: 24px; 
+  display: block; 
+  width: 100%;
+  text-align: left; 
+  padding-left: 0;
+}
+
+.stress-item { 
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 700; 
+  color: #111111; 
+  margin-bottom: 12px; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  letter-spacing: -0.02em;
+  justify-content: flex-start ; 
+}
+
+/* 빨간 불릿 */
+.stress-item::before { 
+  content: ''; 
+  width: 5px; 
+  height: 5px; 
+  background-color: #C41E1E;
+  border-radius: 50%; 
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.stress-sub-bold { 
+  font-size: clamp(15px, 1.6vw, 17px);
+  color: #111;
+  line-height: 1.65;
+  text-align: left; 
+}
+.stress-sub-bold em { font-weight: 900; font-style: normal; color: #000; }
+
+
+
+
+/* ──  홍보 섹션 3 ── */
+.promo-logic {text-align: center;}
+
+
+.logic-headline {  font-family: 'Paperozi';
+  font-size: clamp(24px, 2.5vw, 32px); 
+  font-weight: 700; 
+  line-height: 1.3; 
+  color: #111111; 
+  margin-bottom: 60px; 
+  text-align: center; 
+
+}
+.logic-headline em { 
+  font-style: normal; 
+  color: #C41E1E;
+  font-size: clamp(36px, 3.8vw, 48px); 
+  font-weight: 900;
+  display: block;
+  margin-top: 8px;
+  text-align: center; 
+}
+
+.logic-topteg1  {display: flex;
+    width: 78px;
+    height: 25px;
+padding: 6px 11px;
+justify-content: flex-start;
+align-items: center;
+gap: 10px;
+border: 1px solid #d4d4d4;
+background: #F5F5F5;
+color: #AEAEAE;
+font-family: Pretendard;
+font-size: 12px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: 1.68px;
+margin-bottom: 20px;}
+
+.logic-topteg2 {display: flex;
+    width: 105px;
+    height: 25px;
+padding: 6px 11px;
+justify-content: flex-start;
+align-items: center;
+gap: 10px;
+border: 1px solid #C41E1E;
+background: #C41E1E;
+color: #F1F1F1;
+font-family: Pretendard;
+font-size: 12px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: 1.68px;
+margin-bottom: 20px;}
+
+
+ .logic-layout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+
+.logic-row-box {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; 
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+}
+
+.logic-img-part { height: 240px; width: 100%; overflow: hidden; }
+.logic-img-part img { width: 100%; height: 100%; object-fit: cover; }
+
+
+.logic-card-text { 
+  background: #FAF7F2; 
+  padding: 40px; 
+  border-left: 5px solid #AEAEAE; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  height: 240px;
+  text-align: left;
+}
+.red-accent-card { border-left-color: #C41E1E; }
+.logic-card-title { font-size: 28px; font-weight: 700; color: #111; margin-bottom: 14px; }
+.logic-card-desc { font-size: 16px; color: #111; line-height: 1.65; }
+.logic-card-desc em { font-weight: 900; color: #777; font-style: normal; }
+.red-accent-card em { font-weight: 900; color: #c41e1e; font-style: normal; }
+
+
+
+.logic-bottom-triple {
+  width: 100%;
+  max-width: 1400px; 
+  margin: 80px auto 80px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; 
+  gap: 60px; 
+  align-items: center; 
+  box-sizing: border-box;
+}
+
+/* 좌측 텍스트 상자 팩 */
+.triple-left-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #FFFBF8; 
+  border: 1px solid #F7EFE8;
+  border-radius: 10px;
+  padding: 30px 40px; 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+
+.triple-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+}
+.triple-item:first-child { padding-top: 0; }
+
+.triple-icon-01, .triple-icon-02, .triple-icon-03 {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.triple-text-part strong {
+  font-size: 19px;
+  font-weight: 800;
+  color: #111111;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.triple-text-part p {
+  font-size: 15px;
+  color: #444444;
+  line-height: 1.6;
+}
+
+/* 🏆 */
+.triple-item-f {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: #C41E1E; 
+  padding: 30px 40px;
+  margin-top: 24px;
+  border-radius: 6px;
+}
+.triple-icon-04 {
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.triple-text-part-white strong {
+  font-size: 21px;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 6px;
+}
+.triple-text-part-white p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.triple-right-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.triple-right-img img {
+  width: 100%;
+  max-width: 560px; 
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+
+
+/* ── 5가지 전문 고춧가루 라인업 ── */
+.lineup-dark-zone { 
+  background: var(--dark-brown); 
+  color: white; 
+  padding: 90px 0; 
+  text-align: center; 
+}
+
+.lineup-headline {
+  font-family: 'Paperozi'; 
+  font-size: clamp(24px, 2.5vw, 32px); 
+  font-weight: 700; 
+  line-height: 1.3; 
+  color: white; 
+  margin-bottom: 60px; 
+  text-align: center; 
+}
+
+.lineup-headline em {   
+  font-style: normal; 
+  color: #C41E1E;
+  font-size: clamp(36px, 3.8vw, 48px); 
+  font-weight: 900;
+  display: block;
+  margin-top: 8px;
+  text-align: center;  
+}
+
+.lineup-grid-5 { 
+  display: grid; 
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 16px; 
+  text-align: left; 
+}
+
+
+.lineup-card { 
+  background: var(--mid-brown); 
+  padding: 28px 20px; 
+  border-top: 3px solid #C41E1E; 
+  
+  cursor: pointer; 
+  position: relative;
+  top: 0; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+
+.lineup-card:hover {
+  background: #800000;
+  top: -8px; 
+  
+ 
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5); 
+  border-top-color: var(--red-bright);
+}
+
+.lineup-tag { 
+  font-size: 12px; 
+  color: var(--red-bright); 
+  font-weight: 700; 
+  margin-bottom: 12px; 
+  display: block; 
+}
+
+.lineup-name { 
+  font-size: 18px; 
+  font-weight: 700; 
+  margin-bottom: 12px; 
+  color: #fff; 
+}
+
+.lineup-desc { 
+  font-size: 13px; 
+  color: #bbaaa0; 
+  line-height: 1.6; 
+}
+
+/* 후기 */
+.ticker-banner { background: #801816; color: white; padding: 15px 0; overflow: hidden; white-space: nowrap; }
+.ticker-wrapper { display: inline-block; white-space: nowrap; animation: tickerLoop 35s linear infinite; }
+.ticker-text { display: inline-block; padding-right: 60px; font-size: 20px; font-weight: 300; }
+.ticker-text em {color: #888888;}
+
+
+/* ──  샘플 신청 섹션 ── */
+
+
+
+.sample-container-zone { 
+  background: #410000; 
+  padding: 100px 0; 
+  text-align: center; 
+  color: white; 
+}
+
+.sample-zone-mini { font-family: 'Paperozi';  color: #F1F1F1;
+text-align: center;
+font-size: 18px;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+letter-spacing: 20px; }
+
+.sample-zone-title {
+font-family: 'Paperozi'; 
+color: #F1F1F1;
+  text-align: center;
+  font-size: clamp(40px, 4.5vw, 62px); 
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25; 
+  margin-top: 14px;
+}
+
+.sample-zone-headline { font-family: 'Paperozi'; 
+ font-family: 'Paperozi', 'Noto Serif KR', serif; 
+  color: #C41E1E;
+  text-align: center;
+  font-size: clamp(80px, 6.5vw, 95px); 
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+.sample-zone-sub { 
+  font-size: 15px; 
+  color: rgba(255,255,255,0.7); 
+  margin-bottom: 50px; 
+}
+
+/* 신청서 흰색 카드 본체 */
+.form-card-white {
+  background: #ffffff; 
+  max-width: 620px; 
+  margin: 0 auto; 
+  padding: 55px 50px; 
+  text-align: left; 
+  color: #111;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.form-title-main { 
+  font-size: 30px; 
+  font-weight: 900; 
+  text-align: center; 
+  margin-bottom: 8px; 
+  color: #000; 
+}
+
+.form-sub-main { 
+  font-size: 14px; 
+  color: var(--red); 
+  font-weight: 700; 
+  text-align: center; 
+  margin-bottom: 35px; 
+  line-height: 1.5; 
+}
+
+.form-alert-red-box { 
+  background: #fff5f5; 
+  border: 1px solid #ffcccc; 
+  padding: 16px; 
+  margin-bottom: 24px; 
+  font-size: 13px; 
+  color: var(--red); 
+  line-height: 1.6; 
+}
+
+.form-group-field { 
+  margin-bottom: 24px; 
+}
+
+.form-label-field { 
+  display: block; 
+  font-size: 13px; 
+  font-weight: 700; 
+  color: #333; 
+  margin-bottom: 10px; 
+}
+
+/* 일반 텍스트 입력창 */
+.form-input-text { 
+  width: 100%; 
+  padding: 14px 16px; 
+  border: 1px solid #ddd; 
+  font-size: 14px; 
+  outline: none; 
+  background: #fafafa; 
+}
+
+.form-input-text:focus { 
+  border-color: var(--red); 
+  background: white; 
+}
+
+.form-bottom-info-box { 
+  background: #fdfdfd; 
+  border: 1px solid #eee; 
+  padding: 18px; 
+  font-size: 12px; 
+  color: #666; 
+  line-height: 1.7; 
+  margin-top: 30px; 
+}
+
+/* 신청하기버튼 */
+.form-btn-submit { 
+  width: 100%; 
+  background: var(--red); 
+  color: white; 
+  border: none; 
+  padding: 18px; 
+  font-size: 18px; 
+  font-weight: 700; 
+  margin-top: 30px; 
+  cursor: pointer; 
+  transition: background 0.2s; 
+  text-align: center; 
+}
+
+.form-btn-submit:hover { 
+  background: var(--red-bright); 
+}
+
+
+
+.checkbox-stack { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  margin-top: 14px; 
+  width: 100%;
+}
+
+.checkbox-row-label { 
+  display: flex; 
+  align-items: center; 
+  background: #ffffff;
+  border: 1px solid #E2E8F0; 
+  padding: 16px 20px; 
+  cursor: pointer; 
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #444;
+}
+
+.checkbox-row-label:hover {
+  border-color: #CBD5E1;
+  background: #FAFAFA;
+}
+
+.checkbox-row-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.custom-checkbox-box {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #A0AEC0; 
+  background-color: #ffffff;
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 20px; 
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.checkbox-row-label input:checked ~ .custom-checkbox-box {
+  border-color: var(--red);
+  background-color: var(--red);
+}
+
+
+.checkbox-row-label input:checked ~ .custom-checkbox-box::after {
+  content: '';
+  position: absolute;
+  left: 8px; top: 3px;
+  width: 5px; height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+.checkbox-content-wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+
+.checkbox-item-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #334155; 
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+
+.checkbox-item-desc {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #94A3B8; 
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+
+@media (max-width: 640px) {
+  .checkbox-row-label {
+    padding: 14px 16px; 
+  }
+  .custom-checkbox-box {
+    margin-right: 14px;
+  }
+  .checkbox-item-title {
+    font-size: 15px; 
+  }
+  .checkbox-item-desc {
+    font-size: 12px;
+  }
+}
+
+
+/* ── CONTACT & FOOTER ── */
+.contact-zone { font-family: 'Paperozi';  background: #111; color: white; padding: 70px 0; text-align: center; }
+.contact-headline { font-size: 24px; font-weight: 700; margin-bottom: 30px; }
+.btn-kakao-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #FEE500; color: #1A1A1A; text-decoration: none; width: 100%; max-width: 440px; padding: 16px; font-size: 15px; font-weight: 700; margin-bottom: 24px; }
+.phone-text-info { font-size: 14px; color: #999; line-height: 1.6; }
+.phone-text-info span { font-size: 40px; color: var(--gold); font-weight: 700; display: block; margin-top: 6px; }
+
+
+
+
+footer { 
+  background: #0A0604; 
+  padding: 60px 0; 
+  color: #777777; 
+  font-size: 13px; 
+  line-height: 1.8; 
+  text-align: center; 
+  border-top: 1px solid #1a110b; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-links {
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; 
+}
+
+/* 상단 퀵 링크 버튼 스타일링 */
+.footer-links a { 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px; 
+  font-size: 14.5px;
+  color: #A0A0A0; 
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+.footer-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* 기업 정보 서체 분리 */
+.footer-info {
+  font-size: 13px;
+  color: #666666;
+}
+.footer-company-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #999999;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* 유의사항 및 카피라이트 */
+.footer-notice {
+  font-size: 12px;
+  color: #555555;
+  margin-top: 24px;
+}
+.footer-copyright {
+  font-size: 11px;
+  color: #444444;
+  margin-top: 8px;
+}
+
+/* ── 📌 FIXED STICKY CTA (하단바 고정) ── */
+.sticky-cta-bar { display: flex; justify-content: space-around; align-items: center; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: #111; border-top: 2px solid var(--red); padding: 14px 40px; box-shadow: 0 -5px 25px rgba(0,0,0,0.5); }
+.sticky-cta-bar a { text-decoration: none; font-weight: 700; }
+.sticky-btn-phone { color: var(--gold); font-size: 14px; }
+.sticky-btn-sample { color: white; background: var(--red); padding: 10px 24px; font-size: 14px; transition: background 0.2s; }
+
+/* ── Keyframes ── */
+@keyframes tickerLoop { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+
+@media (max-width: 960px) {
+  .promo-hero {
+    background-image: none !important; 
+    position: relative !important;
+    z-index: 1 !important;
+    
+
+    padding: 100px 24px 80px !important; 
+    min-height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .promo-hero::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important; 
+    z-index: -1 !important; 
+    
+    background-image: url('../images/img01.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: 340px auto !important; 
+    background-position: center bottom 40px !important; 
+    
+    opacity: 0.5 !important; 
+    pointer-events: none !important; 
+  }
+  
+  .promo-hero-max {
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  .hero-left {
+    max-width: 100% !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-headline {
+    margin-bottom: 24px !important;
+  }
+
+  .hero-headline .dark-text,
+  .hero-headline .red-text,
+  .hero-sub {
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+  }
+  .hero-sub {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    text-align: center !important; 
+    padding: 0 10px !important;
+    word-break: keep-all !important;
+    color: #222222 !important; 
+    font-weight: 500;
+  }
+
+  .hero-sub strong {
+    font-size: 18px !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-btn-container {
+    margin-top: 50px !important; 
+    width: 100% !important;
+    position: relative !important;
+    z-index: 2 !important; 
+  }
+
+  .btn-main {
+    width: 100% !important;
+    max-width: 320px !important;
+    padding: 14px 0 !important;
+    font-size: 17px !important;
+  }
+
+  .stress-container, .logic-layout-grid, .logic-bottom-triple {
+    grid-template-columns: 1fr; gap: 32px; text-align: center;
+  }
+  .stress-right-text, .logic-card-text { text-align: center; }
+  .logic-bottom-triple { grid-column: auto; }
+  .triple-right-img { height: 240px; }
+  .lineup-grid-5 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .nav-inner { padding: 0 24px; }
+
+
+  .promo-stress {
+    padding: 60px 20px; 
+  }
+
+  .stress-container {
+    flex-direction: column; 
+    gap: 40px;
+    text-align: center;
+  }
+
+  .stress-left-img {
+    width: 100%;
+    max-width: 100%;
+    height: 260px; 
+  }
+
+  .stress-right-text {
+    width: 100%;
+  }
+
+  .stress-headline {
+    font-size: 20px;
+  }
+
+  .stress-headline em {
+    font-size: 32px; 
+  }
+
+  .stress-list {
+    display: inline-block ;
+    width: auto !important; 
+    max-width: 100% !important;
+    text-align: left !important;
+    padding: 0 16px !important;
+    margin: 20px auto !important; 
+  }
+  
+  .stress-sub-bold {
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: keep-all; 
+  }
+
+  .stress-sub { 
+  margin-bottom: 20px; 
+  margin-top: 20px; 
+ 
+}
+
+  .promo-stress .inner {
+    padding: 0 24px;
+  }
+  .stress-container {
+    flex-direction: column !important; 
+    gap: 40px;
+  }
+  .stress-left-img {
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+  }
+  .stress-right-text {
+    width: 100%;
+    text-align: center;
+  }
+  .stress-headline, .stress-headline em, .stress-sub, .stress-sub-bold {
+    text-align: center !important;
+  }
+  .stress-list {
+    display: inline-block !important; 
+    width: auto !important; 
+    max-width: 100% !important;
+    text-align: left !important; 
+    margin: 20px auto !important; 
+    padding: 0 16px !important;
+  }
+  .stress-item {
+    justify-content: flex-start !important;
+    display: flex !important;
+}
+
+
+ .promo-logic {
+    background-image: none !important; 
+    position: relative !important;
+    z-index: 1 !important;
+    padding:  24px  !important; 
+    min-height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  
+
+  
+  .logic-row-box {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important; 
+    margin-bottom: 30px; 
+  }
+
+  .logic-img-part {
+    height: 220px !important;
+  }
+
+  .logic-card-text {
+    height: auto !important; 
+    padding: 30px 20px !important;
+    text-align: center !important; 
+    border-left: none !important;
+    border-top: 5px solid #AEAEAE; 
+  }
+  .red-accent-card {
+    border-top-color: #C41E1E !important;
+  }
+
+  .logic-topteg1, .logic-topteg2 {
+    margin: 0 auto 16px !important; 
+  }
+
+  .logic-card-title {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+  }
+
+  .logic-card-desc {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+.logic-bottom-triple {
+    grid-template-columns: 1fr !important; 
+    gap: 40px !important;
+    margin-top: 50px;
+    padding: 0 10px;
+  }
+  
+  .triple-left-list {
+    padding: 35px 20px 24px !important;
+  }
+
+  .triple-item {
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .triple-text-part strong { font-size: 17px; }
+  .triple-text-part p { font-size: 14px; line-height: 1.55; word-break: keep-all; }
+
+ 
+  .triple-item-f {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 12px;
+    padding: 24px 20px;
+  }
+  .triple-icon-04 { font-size: 32px; }
+  .triple-text-part-white strong { font-size: 18px; }
+  .triple-text-part-white p { font-size: 14px; line-height: 1.5; word-break: keep-all; }
+
+
+  .triple-right-img {
+   display: none;
+  }
+  
+
+  .sample-container-zone { 
+    padding: 70px 20px !important; 
+  }
+  
+  .sample-zone-mini {
+    letter-spacing: 8px !important; 
+    margin-bottom: 4px;
+  }
+
+  .sample-zone-title {
+    margin-top: 10px !important;
+    line-height: 1.3 !important;
+  }
+
+  .sample-zone-headline {
+    margin-top: 8px !important;
+    line-height: 1.2 !important;
+
+  }
+
+  .sample-zone-sub { 
+    margin-bottom: 35px !important; 
+    padding: 0 10px;
+  }
+  
+footer {
+    padding: 45px 20px 100px !important; 
+  }
+
+  
+  .footer-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .footer-links a {
+    padding: 12px 10px !important; 
+    font-size: 13px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    letter-spacing: -0.02em;
+  }
+
+
+  .footer-info {
+    font-size: 12px !important;
+    line-height: 1.7 !important;
+    word-break: keep-all; 
+  }
+
+  .footer-company-name {
+    font-size: 14.5px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .footer-notice {
+    margin-top: 20px !important;
+    font-size: 11.5px !important;
+    padding: 0 5px;
+  }
+
+@media (max-width: 640px) {
+  .lineup-grid-5 { grid-template-columns: 1fr; }
+  .form-card-white { padding: 35px 20px; }
+  .sticky-cta-bar { flex-direction: column; gap: 10px; padding: 12px 20px; }
+  .sticky-btn-sample { width: 100%; text-align: center; }
+  .nav-btn { font-size: 13px; padding: 0 14px; height: 38px; }
+  .nav-logo img { height: 35px; }
+}}
