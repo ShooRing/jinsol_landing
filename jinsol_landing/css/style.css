@@ -1188,6 +1188,41 @@ footer {
   }
 }
 
+@media (max-width: 960px) {
+  .sample-zone-mini {
+    font-size: 14px !important;
+    letter-spacing: 4px !important; 
+    display: block !important;
+    white-space: nowrap !important;
+    margin-bottom: 8px !important;
+  }
+
+  .sample-zone-title {
+    font-size: 26px !important; 
+    line-height: 1.3 !important;
+    word-break: keep-all !important; 
+    text-wrap: balance !important;
+    margin-top: 5px !important;
+  }
+
+  .sample-zone-headline {
+    font-size: 38px !important; 
+    line-height: 1.25 !important;
+    word-break: keep-all !important;
+    text-wrap: balance !important;
+    margin-top: 8px !important;
+    display: block !important;
+  }
+
+  .sample-zone-sub {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 35px !important;
+    padding: 0 15px !important;
+    word-break: keep-all !important;
+  }
+}
+
 @media (max-width: 640px) {
   .lineup-grid-5 { grid-template-columns: 1fr; }
   .form-card-white { padding: 35px 20px; }
