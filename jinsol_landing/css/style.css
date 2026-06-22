@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* ── 전역 공통 레이아웃 설정 (해상도 밀림 현상 방지 핵심) ── */
 #wrap {
   width: 100%;
   max-width: 100%;
@@ -48,7 +47,6 @@
   --bg-form-container: #4A1111;
 }
 
-/* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -61,8 +59,6 @@ body {
 }
 section {padding: 100px 0; }
 
-
-/* ── NAV (상단 고정바) ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 15px 0;
@@ -84,74 +80,103 @@ nav {
 }
 .nav-btn:hover { background: var(--red); }
 
-
-/* ── 홍보 섹션 1 ── */
 .promo-hero {
   width: 100%;
-  background-color: var(--white);
-  padding: 160px 0 90px;
+  max-width: 1440px; 
+  margin: 0 auto;
+  padding: 180px 40px 100px; 
   background-image: url('../images/img01.png');
   background-repeat: no-repeat;
-  background-size: clamp(400px, 40vw, 650px) auto; 
-  background-position: right 40px bottom 120px; 
+  background-size: 900px auto; 
+  background-position: right -10px bottom 90px; 
+  position: relative;
+  box-sizing: border-box;
 }
 
 .promo-hero-max {
   width: 100%;
+  max-width: 1360px; 
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; 
 }
 
 .hero-left {
-  max-width: 720px; 
+  max-width: 680px; 
   text-align: left;
 }
 
 .hero-headline {
-  font-family: 'Paperozi';
-  font-style: normal;
-  line-height: 1.25;
-  margin-bottom: 40px;
-  letter-spacing: -0.04em;
+  font-family: 'Paperozi', 'Noto Serif KR', serif; 
+  font-style: normal; 
+  line-height: 1.25; 
+  margin-bottom: 45px; 
+  letter-spacing: -0.04em; 
 }
+
 .hero-headline .dark-text {
-  color: #111111; font-weight: 700; font-size: clamp(32px, 4.5vw, 56px);
+  color: #111111; 
+  font-weight: 700; 
+  font-size: clamp(34px, 3.8vw, 48px); 
 }
+
 .hero-headline .red-text {
-  color: #C41E1E; font-weight: 900; font-size: clamp(43px, 6vw, 76px);
-  display: inline-block; margin-top: 8px;
+  color: #C41E1E; 
+  font-weight: 900; 
+  font-size: clamp(42px, 5vw, 68px); 
+  display: inline-block; 
+  margin-top: 12px; 
 }
 
 .hero-sub {
-  color: #333333; font-size: 18px; font-weight: 400; line-height: 1.75;
+  color: #333333; 
+  font-family: 'Pretendard', sans-serif; 
+  font-size: 17px; 
+  font-weight: 400; 
+  line-height: 1.75; 
+  letter-spacing: -0.02em; 
 }
+
 .hero-sub strong {
-  display: block; color: #111111; font-size: 24px; font-weight: 700;
-  line-height: 1.4; margin-bottom: 16px;
+  display: block; 
+  color: #111111; 
+  font-size: 24px; 
+  font-weight: 700; 
+  line-height: 1.4; 
+  margin-bottom: 18px; 
 }
 
-.hero-btn-container { width: 100%; text-align: center; margin-top: 110px; }
+.hero-btn-container {
+  width: 100%;
+  text-align: center; 
+  margin-top: 60px; 
+}
+
 .btn-main {
-  display: inline-flex; align-items: center; justify-content: center;
-  background: #801816; color: #ffffff; padding: 20px 90px;
-  font-size: 24px; font-weight: 700; text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); transition: all 0.25s ease;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: #801816; 
+  color: #ffffff; 
+  padding: 18px 90px; 
+  font-size: 22px; 
+  font-weight: 700; 
+  text-decoration: none; 
+  border-radius: 2px; 
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); 
+  transition: all 0.25s ease; 
 }
-.btn-main:hover { background: #C41E1E; transform: translateY(-2px); }
-
-
-
-
-/* ── 홍보 섹션 2 ── */
+.btn-main:hover {
+  background: #C41E1E;
+  transform: translateY(-1px);
+}
 
 .promo-stress { 
-  
   background-color: #FAF7F2;
   width: 100%;
   box-sizing: border-box;
 }
-
 
 .promo-stress .inner {
   width: 100%;
@@ -170,7 +195,6 @@ nav {
   gap: 60px; 
 }
 
-/* 이미지 영역 */
 .stress-left-img { 
   flex: 1;
   max-width: 520px; 
@@ -190,7 +214,6 @@ nav {
   text-align: left; 
 }
 
-/* 매번 바뀌는 고춧가루 */
 .stress-headline { 
   font-family: 'Paperozi';
   font-size: clamp(24px, 2.5vw, 32px); 
@@ -201,7 +224,6 @@ nav {
   text-align: left; 
 }
 
-/* 이제 스트레스 받지 마세요.*/
 .stress-headline em { 
   font-style: normal; 
   color: #C41E1E;
@@ -243,7 +265,6 @@ nav {
   justify-content: flex-start ; 
 }
 
-/* 빨간 불릿 */
 .stress-item::before { 
   content: ''; 
   width: 5px; 
@@ -262,12 +283,7 @@ nav {
 }
 .stress-sub-bold em { font-weight: 900; font-style: normal; color: #000; }
 
-
-
-
-/* ──  홍보 섹션 3 ── */
 .promo-logic {text-align: center;}
-
 
 .logic-headline {  font-family: 'Paperozi';
   font-size: clamp(24px, 2.5vw, 32px); 
@@ -276,7 +292,6 @@ nav {
   color: #111111; 
   margin-bottom: 60px; 
   text-align: center; 
-
 }
 .logic-headline em { 
   font-style: normal; 
@@ -324,14 +339,12 @@ line-height: normal;
 letter-spacing: 1.68px;
 margin-bottom: 20px;}
 
-
  .logic-layout-grid {
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;
 }
-
 
 .logic-row-box {
   display: grid;
@@ -343,7 +356,6 @@ margin-bottom: 20px;}
 
 .logic-img-part { height: 240px; width: 100%; overflow: hidden; }
 .logic-img-part img { width: 100%; height: 100%; object-fit: cover; }
-
 
 .logic-card-text { 
   background: #FAF7F2; 
@@ -361,8 +373,6 @@ margin-bottom: 20px;}
 .logic-card-desc em { font-weight: 900; color: #777; font-style: normal; }
 .red-accent-card em { font-weight: 900; color: #c41e1e; font-style: normal; }
 
-
-
 .logic-bottom-triple {
   width: 100%;
   max-width: 1400px; 
@@ -374,7 +384,6 @@ margin-bottom: 20px;}
   box-sizing: border-box;
 }
 
-/* 좌측 텍스트 상자 팩 */
 .triple-left-list {
   width: 100%;
   display: flex;
@@ -387,7 +396,6 @@ margin-bottom: 20px;}
   box-sizing: border-box;
   text-align: left;
 }
-
 
 .triple-item {
   display: flex;
@@ -422,7 +430,6 @@ margin-bottom: 20px;}
   line-height: 1.6;
 }
 
-/* 🏆 */
 .triple-item-f {
   display: flex;
   align-items: center;
@@ -465,11 +472,6 @@ margin-bottom: 20px;}
   object-fit: contain;
 }
 
-
-
-
-
-/* ── 5가지 전문 고춧가루 라인업 ── */
 .lineup-dark-zone { 
   background: var(--dark-brown); 
   color: white; 
@@ -504,12 +506,10 @@ margin-bottom: 20px;}
   text-align: left; 
 }
 
-
 .lineup-card { 
   background: var(--mid-brown); 
   padding: 28px 20px; 
   border-top: 3px solid #C41E1E; 
-  
   cursor: pointer; 
   position: relative;
   top: 0; 
@@ -517,12 +517,9 @@ margin-bottom: 20px;}
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
 }
 
-
 .lineup-card:hover {
   background: #800000;
   top: -8px; 
-  
- 
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5); 
   border-top-color: var(--red-bright);
 }
@@ -548,16 +545,10 @@ margin-bottom: 20px;}
   line-height: 1.6; 
 }
 
-/* 후기 */
 .ticker-banner { background: #801816; color: white; padding: 15px 0; overflow: hidden; white-space: nowrap; }
 .ticker-wrapper { display: inline-block; white-space: nowrap; animation: tickerLoop 35s linear infinite; }
 .ticker-text { display: inline-block; padding-right: 60px; font-size: 20px; font-weight: 300; }
 .ticker-text em {color: #888888;}
-
-
-/* ──  샘플 신청 섹션 ── */
-
-
 
 .sample-container-zone { 
   background: #410000; 
@@ -585,8 +576,8 @@ color: #F1F1F1;
   margin-top: 14px;
 }
 
-.sample-zone-headline { font-family: 'Paperozi'; 
- font-family: 'Paperozi', 'Noto Serif KR', serif; 
+.sample-zone-headline { 
+  font-family: 'Paperozi', 'Noto Serif KR', serif; 
   color: #C41E1E;
   text-align: center;
   font-size: clamp(80px, 6.5vw, 95px); 
@@ -602,7 +593,6 @@ color: #F1F1F1;
   margin-bottom: 50px; 
 }
 
-/* 신청서 흰색 카드 본체 */
 .form-card-white {
   background: #ffffff; 
   max-width: 620px; 
@@ -652,7 +642,6 @@ color: #F1F1F1;
   margin-bottom: 10px; 
 }
 
-/* 일반 텍스트 입력창 */
 .form-input-text { 
   width: 100%; 
   padding: 14px 16px; 
@@ -677,7 +666,6 @@ color: #F1F1F1;
   margin-top: 30px; 
 }
 
-/* 신청하기버튼 */
 .form-btn-submit { 
   width: 100%; 
   background: var(--red); 
@@ -695,8 +683,6 @@ color: #F1F1F1;
 .form-btn-submit:hover { 
   background: var(--red-bright); 
 }
-
-
 
 .checkbox-stack { 
   display: flex; 
@@ -734,7 +720,6 @@ color: #F1F1F1;
   width: 0;
 }
 
-
 .custom-checkbox-box {
   width: 24px;
   height: 24px;
@@ -752,7 +737,6 @@ color: #F1F1F1;
   background-color: var(--red);
 }
 
-
 .checkbox-row-label input:checked ~ .custom-checkbox-box::after {
   content: '';
   position: absolute;
@@ -763,13 +747,11 @@ color: #F1F1F1;
   transform: rotate(45deg);
 }
 
-
 .checkbox-content-wrap {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
-
 
 .checkbox-item-title {
   font-size: 17px;
@@ -780,7 +762,6 @@ color: #F1F1F1;
   line-height: 1.2;
 }
 
-
 .checkbox-item-desc {
   font-size: 13.5px;
   font-weight: 500;
@@ -788,7 +769,6 @@ color: #F1F1F1;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
-
 
 @media (max-width: 640px) {
   .checkbox-row-label {
@@ -805,16 +785,11 @@ color: #F1F1F1;
   }
 }
 
-
-/* ── CONTACT & FOOTER ── */
 .contact-zone { font-family: 'Paperozi';  background: #111; color: white; padding: 70px 0; text-align: center; }
 .contact-headline { font-size: 24px; font-weight: 700; margin-bottom: 30px; }
 .btn-kakao-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #FEE500; color: #1A1A1A; text-decoration: none; width: 100%; max-width: 440px; padding: 16px; font-size: 15px; font-weight: 700; margin-bottom: 24px; }
 .phone-text-info { font-size: 14px; color: #999; line-height: 1.6; }
 .phone-text-info span { font-size: 40px; color: var(--gold); font-weight: 700; display: block; margin-top: 6px; }
-
-
-
 
 footer { 
   background: #0A0604; 
@@ -836,7 +811,6 @@ footer {
   gap: 12px; 
 }
 
-/* 상단 퀵 링크 버튼 스타일링 */
 .footer-links a { 
   display: inline-flex;
   align-items: center;
@@ -854,7 +828,6 @@ footer {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* 기업 정보 서체 분리 */
 .footer-info {
   font-size: 13px;
   color: #666666;
@@ -867,7 +840,6 @@ footer {
   margin-bottom: 8px;
 }
 
-/* 유의사항 및 카피라이트 */
 .footer-notice {
   font-size: 12px;
   color: #555555;
@@ -879,25 +851,20 @@ footer {
   margin-top: 8px;
 }
 
-/* ── 📌 FIXED STICKY CTA (하단바 고정) ── */
 .sticky-cta-bar { display: flex; justify-content: space-around; align-items: center; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: #111; border-top: 2px solid var(--red); padding: 14px 40px; box-shadow: 0 -5px 25px rgba(0,0,0,0.5); }
 .sticky-cta-bar a { text-decoration: none; font-weight: 700; }
 .sticky-btn-phone { color: var(--gold); font-size: 14px; }
 .sticky-btn-sample { color: white; background: var(--red); padding: 10px 24px; font-size: 14px; transition: background 0.2s; }
 
-/* ── Keyframes ── */
 @keyframes tickerLoop { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
 
 @media (max-width: 960px) {
   .promo-hero {
     background-image: none !important; 
     position: relative !important;
     z-index: 1 !important;
-    
-
     padding: 100px 24px 80px !important; 
     min-height: auto !important;
     width: 100% !important;
@@ -909,12 +876,10 @@ footer {
     position: absolute !important;
     inset: 0 !important; 
     z-index: -1 !important; 
-    
     background-image: url('../images/img01.png') !important;
     background-repeat: no-repeat !important;
     background-size: 340px auto !important; 
     background-position: center bottom 40px !important; 
-    
     opacity: 0.5 !important; 
     pointer-events: none !important; 
   }
@@ -979,7 +944,6 @@ footer {
   .lineup-grid-5 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .nav-inner { padding: 0 24px; }
 
-
   .promo-stress {
     padding: 60px 20px; 
   }
@@ -1024,10 +988,9 @@ footer {
   }
 
   .stress-sub { 
-  margin-bottom: 20px; 
-  margin-top: 20px; 
- 
-}
+    margin-bottom: 20px; 
+    margin-top: 20px; 
+  }
 
   .promo-stress .inner {
     padding: 0 24px;
@@ -1059,10 +1022,9 @@ footer {
   .stress-item {
     justify-content: flex-start !important;
     display: flex !important;
-}
+  }
 
-
- .promo-logic {
+  .promo-logic {
     background-image: none !important; 
     position: relative !important;
     z-index: 1 !important;
@@ -1071,9 +1033,6 @@ footer {
     width: 100% !important;
     max-width: 100% !important;
   }
-  
-  
-
   
   .logic-row-box {
     grid-template-columns: 1fr !important;
@@ -1109,7 +1068,7 @@ footer {
     font-size: 14px !important;
     line-height: 1.6 !important;
   }
-.logic-bottom-triple {
+  .logic-bottom-triple {
     grid-template-columns: 1fr !important; 
     gap: 40px !important;
     margin-top: 50px;
@@ -1128,7 +1087,6 @@ footer {
   .triple-text-part strong { font-size: 17px; }
   .triple-text-part p { font-size: 14px; line-height: 1.55; word-break: keep-all; }
 
- 
   .triple-item-f {
     flex-direction: column !important;
     text-align: center;
@@ -1139,11 +1097,9 @@ footer {
   .triple-text-part-white strong { font-size: 18px; }
   .triple-text-part-white p { font-size: 14px; line-height: 1.5; word-break: keep-all; }
 
-
   .triple-right-img {
-   display: none;
+    display: none;
   }
-  
 
   .sample-container-zone { 
     padding: 70px 20px !important; 
@@ -1162,7 +1118,6 @@ footer {
   .sample-zone-headline {
     margin-top: 8px !important;
     line-height: 1.2 !important;
-
   }
 
   .sample-zone-sub { 
@@ -1170,11 +1125,10 @@ footer {
     padding: 0 10px;
   }
   
-footer {
+  footer {
     padding: 45px 20px 100px !important; 
   }
 
-  
   .footer-links {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -1189,7 +1143,6 @@ footer {
     box-sizing: border-box;
     letter-spacing: -0.02em;
   }
-
 
   .footer-info {
     font-size: 12px !important;
@@ -1207,6 +1160,7 @@ footer {
     font-size: 11.5px !important;
     padding: 0 5px;
   }
+}
 
 @media (max-width: 640px) {
   .lineup-grid-5 { grid-template-columns: 1fr; }
@@ -1215,4 +1169,4 @@ footer {
   .sticky-btn-sample { width: 100%; text-align: center; }
   .nav-btn { font-size: 13px; padding: 0 14px; height: 38px; }
   .nav-logo img { height: 35px; }
-}}
+}
